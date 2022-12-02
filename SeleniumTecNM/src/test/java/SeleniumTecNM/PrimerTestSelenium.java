@@ -113,6 +113,20 @@ public class PrimerTestSelenium {
 		
 	}
 	
+	@Test
+	public void testModals() throws InterruptedException {
+        driver.get(URL_SITE);
+		Thread.sleep(2000);
+		By swiper = By.id("moveShowcase__container--Netflix Originals--number--16");
+
+
+		driver.findElement(swiper).click();
+		
+		Thread.sleep(2000);
+		WebElement modal = driver.findElement(By.className("modal__title"));
+		assertThat(modal, notNullValue());
+		
+	}
 	
 	/*
 	@Test
